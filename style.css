@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background 500ms;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  margin-bottom: 50px;
+  margin-top: 150px;
+  font-size: 2.5em;
+}
+
+.input {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 25px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted black;
+  padding-bottom: 5px;
+  text-align: center;
+  transition: border-bottom-color 500ms;
+  outline: none;
+}
+
+.display {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 100;
+}
