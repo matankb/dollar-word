@@ -31,3 +31,8 @@ h1 {
   font-size: 2em;
   font-weight: 100;
 }
+
+.word-bold {
+  font-style: italic;
+  font-weight: 300;
+}

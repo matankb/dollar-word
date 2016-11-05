@@ -36,7 +36,7 @@ function updateDisplay(e) {
     display.innerHTML = `Yes, <span class='word-bold'>${originalWord}</span> is a dollar ${isWord ? 'word' : 'phrase' }!`;
   } else {
     setColor("red")
-    display.innerHTML = `No, the value of "${word}" is <b>${getNumericalValue(word)}</b>, not 100`;
+    display.innerHTML = `No, the value of <span class='word-bold'>${originalWord}</span> is ${getNumericalValue(word)}, not 100`;
   }
 }
 
