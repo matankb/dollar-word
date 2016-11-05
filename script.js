@@ -20,22 +20,20 @@ function isSingleWord(word) {
   return word.indexOf(' ') === -1;
 }
 function isEmpty(word) {
-  return word === '';
+  return word.replace(/\s/g, '') === '';
 }
 
 function updateDisplay(e) {
-  let word = e.target.value;
+  let word = e.target.value.toLowerCase();
+  let originalWord = e.target.value;
   if (isEmpty(word)) {
     display.innerHTML = 'Enter a word';
     setColor("gray");
   }
   else if (isDollarWord(word)) {
     setColor("green")
-    if (isSingleWord(word)) {
-      display.innerHTML = `Yes, "${word}" is a dollar word!`;
-    } else {
-      display.innerHTML = `Yes, "${word}" is a dollar phrase!`;
-    }
+    let isWord = isSingleWord(word);
+    display.innerHTML = `Yes, <span class='word-bold'>${originalWord}</span> is a dollar ${isWord ? 'word' : 'phrase' }!`;
   } else {
     setColor("red")
     display.innerHTML = `No, the value of "${word}" is <b>${getNumericalValue(word)}</b>, not 100`;
@@ -49,7 +47,6 @@ function setColor(color) {
     red: ["rgb(245, 78, 78)", "rgb(205, 63, 63)"],
     gray: ["rgb(212, 212, 212)", "rgb(82, 85, 82)"],
   }
-  console.log(color);
   document.body.style.background = colors[color][0];
   document.getElementById('input').style.borderBottomColor = colors[color][1];
 }
